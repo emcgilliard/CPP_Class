@@ -2,7 +2,7 @@
 using namespace std;
  
 int main() {
-	int numberOfPods, peasPerPod, total_peas;
+	int numberOfPods, peasPerPod, totalPeas;
  
 	cout << "Press return after entering a number\n";
 	cout << "Enter the number of pods:\n";
@@ -22,7 +22,7 @@ int main() {
 	cout << peasPerPod;
 	cout << " peas in each pod, then\n";
 	cout << "you have ";
-	cout << total_peas;
+	cout << totalPeas;
 	cout << " peas in all the pods.\n";
  
  

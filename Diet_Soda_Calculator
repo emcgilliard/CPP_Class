@@ -22,26 +22,50 @@ int main()
     
     const double SWEETNER_RATIO = .001;             //Ratio of sweetner to diet soda
     const double SODA_SIZE_GRAMS = 350;             //Weight (grams) of a can of soda
+    const double LEATHAL_DOSE_RATIO = 0.142857;     //This is the ratio of sweetner to mass for a lethal does (equal to 1/7)
     
     
-    double leathalDose;                             //For storing leath dose amount
-    string mass;                                    //Mass of the user
+    double lethalDose;                             //For storing leath dose amount
+    double sweetnerPerCan;                          //The amount of artificial sweetner in each can
+    double numberOfCans;                            //Number of cans that must be consumed
+    double mass;                                    //Mass of the user
     char another;                                   //Looping value
     
     
-    
+    sweetnerPerCan = SODA_SIZE_GRAMS * SWEETNER_RATIO;
     
     
     cout<<"Did you know that artificial sweetner has caused death in lab mice?\n"
         <<"Use this calculator to determine how much diet soda it would take to kill you!\n";
 
 
+//Posttest do-while Loop for computing the lethal dosage of artificial sweetner
 
-        
 do  
 {
-    cout <<"Please input your desired weight: ";
+    cout <<"Please input your desired weight in grams: ";
     cin >> mass;
+    
+    cout <<"Thank you. You entered "
+         << mass << "." << endl;
+    
+    
+    //Use the users weight to find the letal dosage
+    
+    
+    lethalDose = mass * LEATHAL_DOSE_RATIO;
+    cout <<"Your lethal dose amount (in grams) is: " 
+         << LEATHAL_DOSE_RATIO << "." << endl;
+    
+    //Divide the lethal dosage by the amount of soda per can
+    
+    
+    
+    //Display the number of cans that need to be consumed
+    
+    
+    
+    //Ask if the user wants to perform another calculation
 
     
     cout <<"Do you want to do another?\n";

@@ -1,0 +1,63 @@
+/******************************************************************************
+
+Author: Eric McGilliard
+Email Address: emcgilliard@gmail.com
+Chapter 2, Programming Project #1 
+
+Description: This program will calcualte the amount of artificial sweetner 
+required to cause death to a human
+
+Last Changed: 03/06/2018
+
+*******************************************************************************/
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    
+    const double SWEETNER_RATIO = .001;             //Ratio of sweetner to diet soda
+    const double SODA_SIZE_GRAMS = 350;             //Weight (grams) of a can of soda
+    
+    
+    double leathalDose;                             //For storing leath dose amount
+    string mass;                                    //Mass of the user
+    char another;                                   //Looping value
+    
+    
+    
+    
+    
+    cout<<"Did you know that artificial sweetner has caused death in lab mice?\n"
+        <<"Use this calculator to determine how much diet soda it would take to kill you!\n";
+
+
+
+        
+do  
+{
+    cout <<"Please input your desired weight: ";
+    cin >> mass;
+
+    
+    cout <<"Do you want to do another?\n";
+    cin >> another;
+
+
+
+} while (another == 'Y' || another == 'y');
+
+
+
+
+cout << "Thank you for using the calculator, goodbye!";
+
+    return 0;
+}
+
+
+

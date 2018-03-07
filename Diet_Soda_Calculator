@@ -22,18 +22,26 @@ int main()
     
     const double SWEETNER_RATIO = .001;             //Ratio of sweetner to diet soda
     const double SODA_SIZE_GRAMS = 350;             //Weight (grams) of a can of soda
-    const double LEATHAL_DOSE_RATIO = 0.142857;     //This is the ratio of sweetner to mass for a lethal does (equal to 1/7)
+    const double LEATHAL_DOSE_RATIO = 0.142857;     //This is the ratio of sweetner -> mass for a lethal does (equal to 1/7)
     
     
-    double lethalDose;                             //For storing leath dose amount
+    double leathalDose;                             //For storing leath dose amount
     double sweetnerPerCan;                          //The amount of artificial sweetner in each can
     double numberOfCans;                            //Number of cans that must be consumed
-    double mass;                                    //Mass of the user
+    
+    int mass;                                       //Mass of the user
     char another;                                   //Looping value
     
-    
+  
+//Find the amount of sweetner (in grams) in each can of diet soda 
+
     sweetnerPerCan = SODA_SIZE_GRAMS * SWEETNER_RATIO;
+
+//Display the result (for debugging only)
     
+    cout << "Sweetner per can (in grams) " << sweetnerPerCan << endl;
+
+//Welcome the user    
     
     cout<<"Did you know that artificial sweetner has caused death in lab mice?\n"
         <<"Use this calculator to determine how much diet soda it would take to kill you!\n";
@@ -50,18 +58,26 @@ do
          << mass << "." << endl;
     
     
-    //Use the users weight to find the letal dosage
+    //Use the users weight to find the letal dosage (in grams of sweetner)
     
+    leathalDose = mass * LEATHAL_DOSE_RATIO;
     
-    lethalDose = mass * LEATHAL_DOSE_RATIO;
+    //Display the lethal dose amount in grams
+    
     cout <<"Your lethal dose amount (in grams) is: " 
-         << LEATHAL_DOSE_RATIO << "." << endl;
+         << leathalDose << "." << endl;
     
-    //Divide the lethal dosage by the amount of soda per can
+    //Divide the lethal dosage by the amount of sweetner per can
     
     
+    numberOfCans = leathalDose / sweetnerPerCan;
     
-    //Display the number of cans that need to be consumed
+    
+    //Display the number of cans that need to be consumed    
+    
+    cout <<"You would need to consume "
+         << numberOfCans
+         << " cans of diet soda to kill yourself.\n" << endl;
     
     
     
@@ -78,10 +94,7 @@ do
 
 
 
-cout << "Thank you for using the calculator, goodbye!";
+cout << "\nThank you for using the calculator, goodbye!";
 
     return 0;
 }
-
-
-

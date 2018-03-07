@@ -90,7 +90,7 @@ do
     //Ask if the user wants to perform another calculation
 
     
-    cout <<"Do you want to do another calculation?\n";
+    cout <<"Do you want to do another calculation? (Y for Yes)\n";
     cin >> another;
 
 

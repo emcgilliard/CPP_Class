@@ -1,0 +1,51 @@
+/******************************************************************************
+
+Author: Eric McGilliard
+Email Address: emcgilliard@gmail.com
+Chapter 3, Programming Project #1 
+
+Description: This program will calculate the charge of a phone call placed at 
+             various time of the day and on various days of the week. 
+
+Last Changed: 03/07/2018
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    
+    //Telephone rate charges
+    const double WEEKEND_RATE   = 0.15;
+    const double WEEKDAY_RATE   = 0.40; 
+    const double WEEKNIGHT_RATE = 0.25; 
+    
+    
+    //User input variables
+    int callLength; 
+    double startTime;
+    char dayOfWeek;
+    
+    //Welcome the user, ask for day of week
+    cout <<"Welcome to the long distance cost calculator.\nPlease input the day the call began: "
+         <<"(Please enter the day in this format: Mo, Tu, We, Th, Fr, Sa, Su)";
+    cin >> dayOfWeek; 
+    cout << "You entered: " << dayOfWeek << endl;
+    
+    
+    //Ask for the call duration
+    cout << "Please enter the length of the call in minutes (use whole numbers): "; 
+    cin  >> callLength; 
+    cout <<"You entered: " << callLength << " minutes.\n";
+    
+    
+    //Ask for the time the call started
+    cout << "What time did the call start? (Use 24 hour format, i.e. 13:30 for 1:30 PM: "; 
+    cin >> startTime;
+    cout << "You entered: " << startTime << endl; 
+
+    return 0;
+}

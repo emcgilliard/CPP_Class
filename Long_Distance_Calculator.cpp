@@ -12,6 +12,7 @@ Last Changed: 03/07/2018
 *******************************************************************************/
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -53,24 +54,28 @@ do
     cout << "You entered: " << startTime << endl;    
     
     //If statment checks for a weekend first, then prime time, otherwise the night rate is charged
-    {
-    if ((dayOfWeek == "Sa") || (dayOfWeek == "Su"))
     
-        totalCharge = callLength * WEEKEND_RATE;
+        if ((dayOfWeek == "Sa") || (dayOfWeek == "Su"))
         
+             totalCharge = callLength * WEEKEND_RATE;
+          
         
-    else if ((startTime >= 6) && (startTime <18))
+        else if ((startTime >= 6) && (startTime <18))
+        
+            totalCharge = callLength * WEEKDAY_RATE;
+         
+        else
+        
+             totalCharge = callLength * WEEKNIGHT_RATE;
+          
     
-        totalCharge = callLength * WEEKDAY_RATE;
-        
-    else
-        totalCharge = callLength * WEEKNIGHT_RATE;
-    }   
-        
-    //Display the total charge to the user
+    //Display the total charge to the user. Format to dollar/cent notation
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
     cout << "Your total charge is $" << totalCharge << endl;
     
-    
+    //
     cout << "Do you want to perform another calculation? (Enter Y for Yes): ";
     
     cin >> loop;

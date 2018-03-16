@@ -42,6 +42,11 @@ do
     cout << "You entered: " << dayOfWeek << endl;
     
     
+    //The day of week needs to be uppercased. I couldn't get this function to work properly
+    //dayOfWeek = toupper('dayOfWeek');
+    
+    
+    
     //Ask for the call duration
     cout << "Please enter the length of the call in minutes (use whole numbers): "; 
     cin  >> callLength; 
@@ -55,7 +60,7 @@ do
     
     //If statment checks for a weekend first, then prime time, otherwise the night rate is charged
     
-        if ((dayOfWeek == "Sa") || (dayOfWeek == "Su"))
+        if ((dayOfWeek == "SA") || (dayOfWeek == "SU"))
         
              totalCharge = callLength * WEEKEND_RATE;
           
@@ -75,7 +80,7 @@ do
     cout.precision(2);
     cout << "Your total charge is $" << totalCharge << endl;
     
-    //
+    //Ask if the user wants to do another calculation. Something is up with the loop, I think there is an issue around the braces in the if-statement. 
     cout << "Do you want to perform another calculation? (Enter Y for Yes): ";
     
     cin >> loop;

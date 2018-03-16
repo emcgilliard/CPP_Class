@@ -26,8 +26,10 @@ int main()
     
     //User input variables
     int callLength; 
+    double totalCharge;
     double startTime;
-    char dayOfWeek;
+    string dayOfWeek;
+    
     
     //Welcome the user, ask for day of week
     cout <<"Welcome to the long distance cost calculator.\nPlease input the day the call began: "
@@ -44,8 +46,30 @@ int main()
     
     //Ask for the time the call started
     cout << "What time did the call start? (Use 24 hour format, i.e. 13:30 for 1:30 PM: "; 
-    cin >> startTime;
+    cin >> startTime;  //this is admittedly hacky, but keeping the start time as a double drops everything after the user enters :00
     cout << "You entered: " << startTime << endl; 
+    
+    
+    if ((dayOfWeek == "Sa") || (dayOfWeek == "Su"))
+    
+        totalCharge = callLength * WEEKEND_RATE;
+        
+        //cout << "It's a weekend, yay!\n Your total is $";
+        
+    else if ((startTime >= 6) && (startTime <18))
+    
+        totalCharge = callLength * WEEKDAY_RATE;
+        
+    else
+        totalCharge = callLength * WEEKNIGHT_RATE;
+        
+
+    cout << "Your total charge is $" << totalCharge;
+    
+    
+    
+    
+    
 
     return 0;
 }

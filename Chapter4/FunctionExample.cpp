@@ -26,7 +26,7 @@ int main()
     cout << "Enter the price per item $";
     cin  >> price; 
     
-    bill - total_cost(number, price);       //function call
+    bill = total_cost(number, price);       //function call
     
     cout.setf(ios::fixed);
     cout.setf(ios::showpoint);
@@ -37,4 +37,16 @@ int main()
          << endl;
          
     return 0;
+}
+
+
+
+double total_cost(int number_par, double price_par)         //function heading
+{
+        const double TAX_RATE = 0.05; //5% sales TAX_RATE
+        double subtotal; 
+        
+        subtotal = price_par * number_par;
+        return (subtotal + subtotal * TAX_RATE);
+        
 }

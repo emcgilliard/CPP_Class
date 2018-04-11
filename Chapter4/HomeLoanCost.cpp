@@ -24,8 +24,9 @@ double setCost(double initialLoan);                  //Find the annual cost of t
 
 int main()
 {
-    
+    //declare vars for home price, loan amount, down payment, and annual cost
     double initialLoan, price, downPayment, cost;
+    //declare a looping var
     char loop;
     
     //Welcome message
@@ -44,17 +45,18 @@ do
     //determine the cost of the loan
     cost = setCost(initialLoan);
     
+    //format the output
     cout.setf(ios::fixed);
     cout.setf(ios::showpoint);
     cout.precision(2);
     cout << "The annual cost of the mortage, after tax savings, is: $";
     cout << cost << endl;
     
-    
     //Ask if the user wants to repeat the calculation
     cout << "Do you want to do another calculation? (Y for Yes)";
     cin >> loop;
 } 
+
 
 while (loop == 'Y' || loop == 'y');
 

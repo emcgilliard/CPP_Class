@@ -11,7 +11,9 @@ This program demonstrates how to create a function
 
 using namespace std;
 
-double total_cost(int number_par, double price_par);        //function declaration
+//double total_cost(int number_par, double price_par);        //function declaration. Formal parameter names are not required
+
+double total_cost(int, double);  //this function uses only the data types
 //computes the total cose, including 5% sales tax, 
 //on number_par items at a cost of price_par each
 
@@ -50,3 +52,16 @@ double total_cost(int number_par, double price_par)         //function heading
         return (subtotal + subtotal * TAX_RATE);
         
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

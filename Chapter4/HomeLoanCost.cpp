@@ -17,31 +17,28 @@ using namespace std;
 const double TAX_RATE = 0.35;
 
 //Function declarations
-double getCost();       //asks the user for the cost of the home
-double getDownpayment(); //asks the user for the down payment amount
-double getBalance(double cost, double downPayment);
+double getPrice();                                  //asks the user for the cost of the home
+double getDownpayment();                            //asks the user for the down payment amount
+double getBalance(double price, double downPayment);//get the initial laon balance
 
 
 int main()
 {
     
-    double initialLoan;
+    double initialLoan, price, downPayment;
     
     //Welcome message
     cout << "Welome to the mortgage cost calculator!\n"
          << "THis program will calculate the annual after-tax cost of a new home.\n";
     
     //Get the input from the user
-    double cost = getCost();
-    double downPayment=  getDownpayment();
+    price = getPrice();
+    downPayment=  getDownpayment();
     
     //Get the initial loan balance
-    initialLoan = getBalance(cost, downPayment);
+    initialLoan = getBalance(price, downPayment);
     
-
-    
-    
-    
+    //
     
     cout<<"Hello World";
 
@@ -50,15 +47,20 @@ int main()
 
 
 
-double getCost()
+/******************************************************************************
+getCost asks the user to input the cost, returns price
+*****************************************************************************/
+double getPrice()
 {
-    double cost; 
+    double price; 
     cout << "Please enter the cost of the home: $";
-    cin >> cost;
-    return cost;
+    cin >> price;
+    return price;
 }
 
-
+/******************************************************************************
+getDownpayment asks the user for the downpayment, returns downpayment
+*****************************************************************************/
 double getDownpayment()
 {
     double downpayment;
@@ -67,9 +69,16 @@ double getDownpayment()
     return downpayment;
 }
 
-double getBalance(double cost, double downPayment)
+/******************************************************************************
+getBalance computes the initial loan balance (Cost - Downpayment)
+*****************************************************************************/
+double getBalance(double price, double downPayment)
 {
     double balance;
-    balance = cost - downPayment;
+    balance = price - downPayment;
     return balance;
 }
+
+
+
+

@@ -1,9 +1,9 @@
 /******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
+Author: Eric McGilliard
+Email Address: emcgilliard@gmail.com
+Chapter 5, Programming Project #1 
+Description: This program will convert 24 hr time to 12 hr time 
+Last Changed: 04/11/2018
 *******************************************************************************/
 
 #include <iostream>
@@ -13,23 +13,26 @@ using namespace std;
 //Set constants
 
 //Function declarations
-void getTime(int& hours, int& mins);                   //asks the user for the cost of the home
-void convertTime(int& hours, int mins, char& am_pm);    //convert to 12 hour notation
+void getTime(int& hours, int& mins);                                //asks the user for the cost of the home
+void convertTime(int& hours, int mins, char& am_pm);                //convert to 12 hour notation
+void displayResult(int hours, int mins, char am_pm, char& loop);    //convert to 12 hour notation
+
 
 int main()
 {
+    //Declare vars for hours, mins, and am/pm
     int hours, mins;
-    char am_pm;
+    char am_pm, loop;
     
-
-    getTime(hours, mins);                     //Get the time from the user
-    convertTime(hours, mins, am_pm);          //Convert the time to 12 hour format
+    do 
+    {
+        //function call to get time, convert to 12 hr, and display results 
+        getTime(hours, mins);                     //Get the time from the user
+        convertTime(hours, mins, am_pm);          //Convert the time to 12 hour format
+        displayResult(hours, mins, am_pm, loop);
+    }
+    while (loop == 'Y' || loop == 'y');
     
-    
-    
-    //display input for debugging
-    cout << hours << mins << am_pm;
-
     return 0;
 }
 
@@ -53,7 +56,7 @@ convertTime converts from 24hr to 12 hr notation
 void convertTime(int& hours, int mins, char& am_pm)
 {
     //Check for am or pm time, set char am_pm to
-    if(hours > 12 ) {
+    if(hours > 12 and hours != 24 ) {
       // if condition is true, set am_pm to P and subtract 12 from the hours
       am_pm = 'P';
       hours = (hours - 12);
@@ -62,3 +65,18 @@ void convertTime(int& hours, int mins, char& am_pm)
       am_pm = 'A';
    }
 }
+
+/******************************************************************************
+Display the result of the conversion, ask if the user wants to repeat
+*****************************************************************************/
+void displayResult(int hours, int mins, char am_pm, char& loop)
+{
+    //display result
+    cout << "In 12 hr notation, the time would be: " << hours << ":" << mins << " " << am_pm << endl;
+    
+    //Ask if the user wants to repeat the calculation
+    cout << "Do you want to do another calculation? (Y for Yes)";
+    cin >> loop;
+}
+
+

@@ -1,3 +1,4 @@
+
 /******************************************************************************
 Author: Eric McGilliard
 Email Address: emcgilliard@gmail.com
@@ -56,7 +57,7 @@ convertTime converts from 24hr to 12 hr notation
 void convertTime(int& hours, int mins, char& am_pm)
 {
     //Check for am or pm time, set char am_pm to
-    if(hours > 12 and hours != 24 ) {
+    if(hours > 12) {
       // if condition is true, set am_pm to P and subtract 12 from the hours
       am_pm = 'P';
       hours = (hours - 12);
@@ -78,5 +79,3 @@ void displayResult(int hours, int mins, char am_pm, char& loop)
     cout << "Do you want to do another calculation? (Y for Yes)";
     cin >> loop;
 }
-
-
